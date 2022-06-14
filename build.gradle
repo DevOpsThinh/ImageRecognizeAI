@@ -1,0 +1,34 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = "1.6.21"
+        buildToolsVersion = "32.0.0"
+        compileSdkVersion = 32
+        targetSdkVersion = compileSdkVersion
+        minSdkVersion = 24
+
+        // Tutorial dependency versions
+        nav_version = "2.4.2"
+        lifecycle_version = '2.4.1'
+        material_version = "1.6.0"
+        camerax_version = "1.2.0-alpha01"
+        glide_version = "4.13.0"
+        threetenabp_version = "1.4.0"
+        leakcanary_version = "2.8.1"
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

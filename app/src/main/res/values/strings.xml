@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ImageRecognizeAI</string>
+    <string name="camera">Camera</string>
+    <string name="capture_photo">Capture a photo</string>
+    <string name="error_connecting_camera">There was an error connecting to the camera.</string>
+    <string name="permission_required">The app requires camera and storage permissions to run.</string>
+    <string name="ok">OK</string>
+</resources>
