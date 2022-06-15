@@ -11,7 +11,7 @@ buildscript {
         nav_version = "2.4.2"
         lifecycle_version = '2.4.1'
         material_version = "1.6.0"
-        camerax_version = "1.2.0-alpha01"
+        camerax_version = "1.1.0-rc02"
         glide_version = "4.13.0"
         threetenabp_version = "1.4.0"
         leakcanary_version = "2.8.1"

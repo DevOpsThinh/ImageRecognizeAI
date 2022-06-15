@@ -7,7 +7,20 @@
 
     <fragment
         android:id="@+id/nav_camera"
-        android:name="com.forever.bee.imagerecognizeai.presentation.CameraFragment"
+        android:name="com.forever.bee.imagerecognizeai.imageRecognization.presentation.camera.CameraFragment"
         android:label="@string/camera"
-        tools:layout="@layout/fragment_camera" />
+        tools:layout="@layout/fragment_camera" >
+        <action
+            android:id="@+id/action_camera_to_picture"
+            app:destination="@id/picture" />
+    </fragment>
+    <fragment
+        android:id="@+id/picture"
+        android:name="com.forever.bee.imagerecognizeai.imageRecognization.presentation.picture.PictureFragment"
+        android:label="Picture"
+        tools:layout="@layout/fragment_picture" >
+        <argument
+            android:name="filePath"
+            app:argType="string" />
+    </fragment>
 </navigation>
