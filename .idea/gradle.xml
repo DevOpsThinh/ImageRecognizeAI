@@ -11,6 +11,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/classifier_common" />
+            <option value="$PROJECT_DIR$/tensorflow_lite_interpreter" />
           </set>
         </option>
       </GradleProjectSettings>

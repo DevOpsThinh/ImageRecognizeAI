@@ -44,7 +44,7 @@ class PictureFragment : Fragment() {
     }
 
     /**
-     * Handle user interactions with the fragment's components (displaying the captured image
+     * Handle user interactions with the fragment's components (displaying the captured image)
      * */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

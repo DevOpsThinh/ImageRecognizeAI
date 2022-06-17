@@ -25,6 +25,7 @@ import androidx.navigation.findNavController
 import com.forever.bee.imagerecognizeai.core.MainActivity
 import com.forever.bee.imagerecognizeai.R
 import com.forever.bee.imagerecognizeai.databinding.FragmentCameraBinding
+import com.forever.bee.imagerecognizeai.imageRecognization.ImageAnalyser
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -46,6 +47,7 @@ class CameraFragment : Fragment() {
 
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var imageCapture: ImageCapture
+    private lateinit var imageAnalyser: ImageAnalyser
 
     /**
      * Initialises the fragment_camera.xml layout's binding class & allows the fragment to interact
