@@ -16,3 +16,4 @@ rootProject.name = "ImageRecognizeAI"
 include ':app'
 include ':tensorflow_lite_interpreter'
 include ':classifier_common'
+include ':tensorflow_lite_task'
