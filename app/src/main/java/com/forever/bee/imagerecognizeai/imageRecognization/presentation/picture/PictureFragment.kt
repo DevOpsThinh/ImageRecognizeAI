@@ -49,7 +49,6 @@ class PictureFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.pictureCaption.text = args.filePath
         binding.pictureImageView.setImage(args.filePath)
     }
 

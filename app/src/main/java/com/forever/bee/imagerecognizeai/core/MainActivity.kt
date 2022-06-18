@@ -13,6 +13,7 @@ import android.content.ContentValues
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.provider.MediaStore
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
@@ -24,6 +25,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.forever.bee.imagerecognizeai.R
 import com.forever.bee.imagerecognizeai.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -70,20 +72,6 @@ class MainActivity : AppCompatActivity() {
             CameraPermissionHelper.requestPermission(this)
         } else {
             recreate()
-        }
-    }
-
-    /**
-     * Assign content values to an image for the image's display name
-     * */
-    fun prepareContentValues(): ContentValues {
-        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val imageFileName = "image_$timeStamp"
-
-        return ContentValues().apply {
-            put(MediaStore.MediaColumns.DISPLAY_NAME, imageFileName)
-            put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-            put(MediaStore.MediaColumns.RELATIVE_PATH, "DCIM")
         }
     }
 
