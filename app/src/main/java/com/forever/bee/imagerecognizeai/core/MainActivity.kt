@@ -15,11 +15,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.forever.bee.imagerecognizeai.R
@@ -33,26 +35,42 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val navController by lazy {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        navHostFragment.navController
+    }
+
+    private val  appBarConfiguration by lazy {
+        AppBarConfiguration(topLevelDestinationIds = setOf(
+            R.id.nav_camera, com.forever.bee.facedetection.R.id.nav_face_detection
+        ))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Switch to Theme_ImageRecognizeAI for displaying the activity
+        setTheme(R.style.Theme_ImageRecognizeAI)
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        setupActionBar()
+        setupBottomNav()
+    }
 
-        val navController = navHostFragment.navController
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_camera
-            )
-        )
+    private fun setupActionBar() {
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+    }
+
+    private fun setupBottomNav() {
+        binding.navView.setupWithNavController(navController)
+    }
+
+    private fun setNavGraphStartDestination(startDestination: Int) {
+        val navGraph = navController.navInflater.inflate(R.navigation.camerax_navigation)
+
+        navGraph.setStartDestination(startDestination)
+        navController.graph = navGraph
     }
 
     /**

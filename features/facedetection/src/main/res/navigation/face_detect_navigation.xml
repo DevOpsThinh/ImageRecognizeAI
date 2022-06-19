@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_face_detection"
+    android:label="FaceDetect"
+    app:startDestination="@id/faceDetectionFragment">
+
+    <fragment
+        android:id="@+id/faceDetectionFragment"
+        android:name="com.forever.bee.facedetection.presentation.FaceDetectionFragment"
+        android:label="@string/face_detection"
+        tools:layout="@layout/fragment_face_detection" />
+</navigation>

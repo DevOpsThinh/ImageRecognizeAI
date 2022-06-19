@@ -1,0 +1,101 @@
+/**
+ * Kotlin Script: The library module
+ *
+ * @author: Nguyen Truong Thinh
+ * Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
+ * */
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    testOptions {
+//        unitTests {
+//            includeAndroidResources = true
+//        }
+//    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+//    sourceSets {
+//        androidTest {
+//            assets.srcDirs = ["src/debug/assets"]
+//        }
+//    }
+
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    // Constraint Layout
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    // Glide lib for image manipulation
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation "com.google.android.material:material:$material_version"
+
+    // Support Libraries and material
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+
+    // TensorFlow Lite interpreter libraries
+    implementation "org.tensorflow:tensorflow-lite:$tensorlite_version"
+    implementation "org.tensorflow:tensorflow-lite-support:$tensorlite_support_metadata_version"
+    implementation "org.tensorflow:tensorflow-lite-metadata:$tensorlite_support_metadata_version"
+    implementation "org.tensorflow:tensorflow-lite-gpu:$tensorlite_version"
+
+    // Google ML Kit, download the model dynamically through Google Play Services.
+    implementation 'com.google.android.gms:play-services-mlkit-face-detection:17.0.1'
+    // Bundle the model with the application.
+    // implementation 'com.google.mlkit:face-detection:16.1.1'
+
+    // CameraX libraries
+    implementation "androidx.camera:camera-core:$camerax_version"
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    implementation "androidx.camera:camera-view:$camerax_version"
+
+    // Utils
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
+
+    // Testing Dependencies
+    testImplementation "junit:junit:$junit_version"
+    testImplementation("org.threeten:threetenbp:${threetenabp_version}") {
+        exclude group: "com.jakewharton.threetenabp", module: "threetenabp"
+    }
+
+    // Instrumented tests dependencies
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+}

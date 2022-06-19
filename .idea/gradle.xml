@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/classifier_common" />
             <option value="$PROJECT_DIR$/fashion_mnist_wrapper" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/facedetection" />
             <option value="$PROJECT_DIR$/tensorflow_lite_interpreter" />
             <option value="$PROJECT_DIR$/tensorflow_lite_task" />
           </set>

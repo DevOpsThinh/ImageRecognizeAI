@@ -9,4 +9,7 @@
     <string name="permission_required">The app requires camera and storage permissions to run.</string>
     <string name="captured_picture">This is the captured image.</string>
     <string name="waiting_for_result">Waiting for result…</string>
+    <string name="face_detect">FaceDetect</string>
+    <string name="picture_label">Picture</string>
+    <string name="image_recog">Image Recognization</string>
 </resources>

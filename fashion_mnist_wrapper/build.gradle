@@ -48,9 +48,9 @@ dependencies {
 
 dependencies {
     compileOnly 'org.checkerframework:checker-qual:2.5.8'
-    api 'org.tensorflow:tensorflow-lite:2.5.0'
-    api 'org.tensorflow:tensorflow-lite-support:0.2.0'
+    api "org.tensorflow:tensorflow-lite:$tensorlite_version"
+    api "org.tensorflow:tensorflow-lite-support:$tensorlite_support_metadata_version"
 //    api files("$buildDir/libs/tensorflow-lite-support-metadata.jar")
-    implementation 'org.tensorflow:tensorflow-lite-metadata:0.2.0'
+    implementation "org.tensorflow:tensorflow-lite-metadata:$tensorlite_support_metadata_version"
     implementation 'org.apache.commons:commons-compress:1.20'
 }

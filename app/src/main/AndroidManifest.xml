@@ -28,6 +28,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <nav-graph android:value="@navigation/camerax_navigation" />
         </activity>
         <provider android:authorities="com.forever.bee.imagerecognizeai.fileprovider"
             android:name="androidx.core.content.FileProvider"
