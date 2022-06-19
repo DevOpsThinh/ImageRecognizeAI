@@ -13,6 +13,7 @@ import android.os.Build
 import com.forever.bee.common.Classifier
 import com.forever.bee.tflite.task.wrapper.FashionMnistModel
 import org.tensorflow.lite.TensorFlowLite.init
+import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
 
@@ -24,17 +25,40 @@ import org.tensorflow.lite.support.model.Model
  * TensorFlow Lite model.
  * @property model An instance of [FashionMnistModel] TensorFlow Lite model.
  *
- * @author VASCO CORREIA VELOSO
+ * @author VASCO CORREIA VELOSO, modify by: Nguyen Truong Thinh on 16/9/2022
  * */
 class TFLiteModelClassifier(context: Context) : Classifier {
     private val model: FashionMnistModel
 
     init {
+//        /*
+//        * Running TensorFlow Lite on dedicated Hardware with Graphical Processing Units
+//        * */
+//        val options = Model.Options.Builder().apply {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+//                setDevice(Model.Device.NNAPI)
+//            }
+//        }.build()
+
+        /*
+        * Running TensorFlow Lite on dedicated Hardware
+        * */
+        val compatibility = CompatibilityList()
         val options = Model.Options.Builder().apply {
+            /*
+            * With Graphical Processing Units
+            * */
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 setDevice(Model.Device.NNAPI)
             }
+            /*
+            * When using a class generated automatically from a model with metadata
+            * */
+            if (compatibility.isDelegateSupportedOnThisDevice) {
+                setDevice(Model.Device.GPU)
+            }
         }.build()
+        compatibility.close()
 
         model = FashionMnistModel.newInstance(context, options)
     }

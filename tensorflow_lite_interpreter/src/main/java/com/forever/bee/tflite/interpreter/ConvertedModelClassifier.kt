@@ -9,11 +9,13 @@ package com.forever.bee.tflite.interpreter
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.os.Build
 import com.forever.bee.common.Classifier
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.Tensor
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.gpu.GpuDelegate
+import org.tensorflow.lite.nnapi.NnApiDelegate
 import org.tensorflow.lite.support.common.FileUtil
 import org.tensorflow.lite.support.common.TensorProcessor
 import org.tensorflow.lite.support.common.ops.NormalizeOp
@@ -38,7 +40,7 @@ import java.nio.ByteBuffer
  * @property outputProcessor The output tensor processing pipelines from [TensorProcessor] class
  * @property labels The classification labels
  *
- * @author VASCO CORREIA VELOSO
+ * @author VASCO CORREIA VELOSO, modify by Nguyen Truong Thinh on 19/6/2022
  * */
 class ConvertedModelClassifier(context: Context) : Classifier {
     private val interpreter: Interpreter
@@ -57,6 +59,14 @@ class ConvertedModelClassifier(context: Context) : Classifier {
     init {
         val compatibility = CompatibilityList()
         val options = Interpreter.Options().apply {
+
+            /*
+            * For Android API level 28 (Pie) and above - The Android Neural Networks API
+            * */
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                addDelegate(NnApiDelegate())
+            }
+
             if (compatibility.isDelegateSupportedOnThisDevice) {
                 addDelegate(
                     GpuDelegate(
