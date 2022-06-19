@@ -64,4 +64,5 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-gpu:2.5.0'
     // Modules
     implementation project(':classifier_common')
+    implementation project(path: ':fashion_mnist_wrapper')
 }

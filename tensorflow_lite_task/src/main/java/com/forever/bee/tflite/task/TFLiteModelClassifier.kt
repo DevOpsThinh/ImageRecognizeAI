@@ -11,7 +11,8 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.os.Build
 import com.forever.bee.common.Classifier
-import com.forever.bee.tflite.task.ml.FashionMnistModel
+import com.forever.bee.tflite.task.wrapper.FashionMnistModel
+import org.tensorflow.lite.TensorFlowLite.init
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
 
