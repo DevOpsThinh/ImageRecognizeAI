@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <item android:drawable="@color/primaryColor" />
+    <item
+        android:bottom="100dp"
+        android:left="100dp"
+        android:right="100dp"
+        android:top="100dp">
+        <bitmap
+            android:gravity="center"
+            android:src="@mipmap/ic_launcher" />
+    </item>
+</layer-list>

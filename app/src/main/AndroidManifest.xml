@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.forever.bee.imagerecognizeai">
 
-    <uses-feature android:name="android.hardware.camera.any" />
-    <!--    Access to the device's cameras & storage-->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -19,26 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ImageRecognizeAI"
         tools:targetApi="31">
+        <!-- Main Activity -->
         <activity
-            android:name=".core.MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <nav-graph android:value="@navigation/camerax_navigation" />
+            <nav-graph android:value="@navigation/main_navigation" />
         </activity>
-        <provider android:authorities="com.forever.bee.imagerecognizeai.fileprovider"
+        <provider
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.forever.bee.imagerecognizeai.fileprovider"
             android:exported="false"
-            android:grantUriPermissions="true"
-            >
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
     </application>
 

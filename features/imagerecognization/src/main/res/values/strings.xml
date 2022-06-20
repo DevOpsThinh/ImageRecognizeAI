@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ImageRecognizeAI</string>
+    <string name="camera">Camera</string>
+    <string name="capture_photo">Capture a photo</string>
+    <string name="error_connecting_camera">There was an error connecting to the camera.</string>
+    <string name="error_saving_photo">There was an error saving the photo.</string>
+    <string name="ok_option">OK</string>
+    <string name="photo_saved">Photo saved!</string>
+    <string name="permission_required">The app requires camera and storage permissions to run.</string>
+    <string name="captured_picture">This is the captured image.</string>
+    <string name="waiting_for_result">Waiting for result…</string>
+    <string name="face_detect">FaceDetect</string>
+    <string name="picture_label">Picture</string>
+    <string name="image_recog">ImageRecognize</string>
+    <string name="image_recognize">Image Recognization</string>
+</resources>
