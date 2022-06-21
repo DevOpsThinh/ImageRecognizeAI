@@ -51,6 +51,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    api 'com.google.guava:guava:30.1.1-android'
+
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -89,6 +91,16 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:$camerax_version"
     implementation "androidx.camera:camera-view:$camerax_version"
 
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1"
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
+
+    // Database
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation "androidx.room:room-ktx:2.4.2"
+
     // Utils
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
 
@@ -97,6 +109,7 @@ dependencies {
     testImplementation("org.threeten:threetenbp:${threetenabp_version}") {
         exclude group: "com.jakewharton.threetenabp", module: "threetenabp"
     }
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
 
     // Instrumented tests dependencies
     androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"

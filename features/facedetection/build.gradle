@@ -2,6 +2,8 @@ apply from: "$rootProject.projectDir/android-library.gradle"
 apply plugin: 'org.jetbrains.kotlin.android'
 
 dependencies {
+    // Modules
+    implementation project(':classifier_common')
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"

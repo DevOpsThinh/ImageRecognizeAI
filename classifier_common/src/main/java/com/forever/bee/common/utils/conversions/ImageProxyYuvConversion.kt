@@ -10,8 +10,55 @@ package com.forever.bee.common.utils.conversions
 import android.graphics.Bitmap
 import android.graphics.ImageFormat
 import android.graphics.Matrix
+import android.graphics.Rect
 import android.renderscript.*
 import androidx.camera.core.ImageProxy
+
+/**
+ * Converting captured YUV images to bitmaps
+ *
+ * @param rs An instance of RenderScript framework.
+ * @param script An intrinsic operation that handle this conversion.
+ *
+ * @author VASCO CORREIA VELOSO
+ * */
+fun ImageProxy.toBitmap(
+    rs: RenderScript,
+    script: ScriptIntrinsicYuvToRGB,
+    bounds: Rect
+): Bitmap {
+    val yuvBytes = toYuvByteArray()
+
+    val yuvType = Type.Builder(rs, Element.U8(rs))
+        .setX(yuvBytes.size)
+        .create()
+    val input = Allocation.createTyped(
+        rs, yuvType, Allocation.USAGE_SCRIPT
+    )
+
+    val bitmap = Bitmap.createBitmap(
+        width, height, Bitmap.Config.ARGB_8888
+    )
+    val output = Allocation.createFromBitmap(rs, bitmap)
+
+    input.copyFrom(yuvBytes)
+    script.setInput(input)
+    script.forEach(output)
+
+    output.copyTo(bitmap)
+
+    input.destroy()
+    output.destroy()
+
+    val matrix = Matrix()
+    matrix.postRotate(imageInfo.rotationDegrees.toFloat())
+
+    return Bitmap.createBitmap(
+        bitmap, bounds.left, bounds.top,
+        bounds.width(), bounds.height(),
+        matrix, true
+    )
+}
 
 /**
  * Converting captured YUV images to bitmaps
