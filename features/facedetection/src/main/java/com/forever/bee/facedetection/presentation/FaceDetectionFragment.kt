@@ -67,16 +67,28 @@ class FaceDetectionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         cameraExecutor = Executors.newSingleThreadExecutor()
-        imageAnalyser = RealtimeFaceDetector(requireContext()) {face ->
+        imageAnalyser = RealtimeFaceDetector(requireContext()) { face ->
             mainThreadHandler.post {
                 onFaceDetected(face)
+            }
+        }
+
+        binding.cameraFeed.post {
+            if (cameraPermissionsGranted()) {
+                openCamera()
+            } else {
+                requestPermissions(CAMERA_PERMISSIONS_REQUESTED, PERMISSION_REQUEST_CODE)
             }
         }
 
     }
 
     private fun onFaceDetected(face: Bitmap?) {
-
+        if (face != null) {
+            binding.faceView.setImageBitmap(face)
+        } else {
+            binding.faceView.setImageResource(android.R.drawable.ic_menu_help)
+        }
     }
 
     /**
@@ -99,7 +111,7 @@ class FaceDetectionFragment : Fragment() {
         val preview = Preview.Builder()
             .build()
             .also {
-//                it.setSurfaceProvider(binding.cameraFeed.surfaceProvider)
+                it.setSurfaceProvider(binding.cameraFeed.surfaceProvider)
             }
 
         val imageAnalysis = ImageAnalysis.Builder()
@@ -118,9 +130,9 @@ class FaceDetectionFragment : Fragment() {
             .addUseCase(preview)
             .addUseCase(imageAnalysis)
 
-//        binding.cameraFeed.viewPort?.let {
-//            useCaseGroup.setViewPort(it)
-//        }
+        binding.cameraFeed.viewPort?.let {
+            useCaseGroup.setViewPort(it)
+        }
 
         try {
             camProvider.unbindAll()

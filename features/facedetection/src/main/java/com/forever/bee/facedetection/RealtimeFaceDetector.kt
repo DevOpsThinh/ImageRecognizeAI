@@ -1,3 +1,10 @@
+/**
+ * Artificial Intelligence on Android with Kotlin
+ *
+ * @author Nguyen Truong Thinh
+ * @since Kotlin 1.6.21 - JDK 1.8 (Java 8)
+ * Contact me: nguyentruongthinhvn2020@gmail.com || +84393280504
+ * */
 package com.forever.bee.facedetection
 
 import android.content.Context
@@ -17,6 +24,11 @@ import com.google.mlkit.vision.face.FaceDetector
 import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.google.mlkit.vision.face.FaceDetectorOptions.PERFORMANCE_MODE_FAST
 
+/**
+ * The [RealtimeFaceDetector] image analysis class for scanning images for faces in real-time
+ *
+ * @author VASCO CORREIA VELOSO
+ * */
 class RealtimeFaceDetector(context: Context, private val receiver: (Bitmap?) -> Unit) :
     ImageAnalysis.Analyzer {
 

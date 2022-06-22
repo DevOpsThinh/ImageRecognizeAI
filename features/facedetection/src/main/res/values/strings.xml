@@ -1,7 +1,7 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_preview">Camera preview</string>
     <string name="face_detection">Face Detection</string>
+    <string name="face_detection_preview">Face detection preview</string>
     <string name="permission_required">The app requires camera and storage permissions to run.</string>
     <string name="error_connecting_camera">There was an error connecting to the camera.</string>
 </resources>
