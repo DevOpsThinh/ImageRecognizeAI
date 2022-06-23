@@ -19,6 +19,7 @@ import androidx.camera.core.ImageProxy
  *
  * @param rs An instance of RenderScript framework.
  * @param script An intrinsic operation that handle this conversion.
+ * @param bounds The bounding box.
  *
  * @author VASCO CORREIA VELOSO
  * */

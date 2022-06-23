@@ -41,10 +41,7 @@ android {
     buildFeatures {
         viewBinding true
     }
-    packagingOptions {
-        exclude 'META-INF/AL2.0'
-        exclude 'META-INF/LGPL2.1'
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -52,6 +49,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    dynamicFeatures = [":features:imageprocessing"]
+
 }
 
 dependencies {
@@ -62,20 +67,20 @@ dependencies {
     implementation project(':features:facedetection')
     implementation project(':features:imagerecognization')
     // Support Libraries
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "com.google.android.material:material:$material_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    api 'androidx.core:core-ktx:1.7.0'
+    api "androidx.appcompat:appcompat:$appcompat_version"
+    api "com.google.android.material:material:$material_version"
+    api "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
 
     // Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+    api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    api "androidx.navigation:navigation-ui-ktx:$nav_version"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$nav_version" // The dynamic navigator dependency.
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
-    implementation "androidx.navigation:navigation-compose:2.5.0-rc01"
+    api "androidx.navigation:navigation-compose:2.5.0-rc01"
     // Utils
     implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
     debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"

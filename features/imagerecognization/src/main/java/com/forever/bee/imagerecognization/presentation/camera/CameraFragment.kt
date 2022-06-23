@@ -9,8 +9,6 @@ package com.forever.bee.imagerecognization.presentation.camera
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
@@ -21,12 +19,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityCompat.recreate
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.os.HandlerCompat
 import androidx.navigation.findNavController
@@ -49,7 +43,8 @@ import java.util.concurrent.Executors
  * */
 class CameraFragment : Fragment() {
 
-    private lateinit var binding: FragmentCameraBinding
+    private var _binding: FragmentCameraBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var cameraExecutor: ExecutorService
     private lateinit var imageCapture: ImageCapture
@@ -76,7 +71,7 @@ class CameraFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentCameraBinding.inflate(inflater, container, false)
+        _binding = FragmentCameraBinding.inflate(inflater, container, false)
         return binding.root
     }
 

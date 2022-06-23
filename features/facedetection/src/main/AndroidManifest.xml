@@ -3,11 +3,5 @@
     package="com.forever.bee.facedetection">
 
     <uses-feature android:name="android.hardware.camera.any" />
-    <!--Access to the device's cameras & storage-->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <!--For the Google Play Services-->
-    <meta-data
-        android:name="com.google.mlkit.vision.DEPENDENCIES"
-        android:value="face" />
 
 </manifest>

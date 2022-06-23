@@ -43,7 +43,6 @@ class FaceDetectionFragment : Fragment() {
     private val mainThreadHandler: Handler = HandlerCompat.createAsync(Looper.getMainLooper())
 
     private companion object {
-        private const val TAG = "[FaceDetection]"
         private const val PERMISSION_REQUEST_CODE = 100
         private val CAMERA_PERMISSIONS_REQUESTED = arrayOf(
             Manifest.permission.CAMERA
@@ -110,8 +109,8 @@ class FaceDetectionFragment : Fragment() {
     private fun configureCameraUseCase(camProvider: ProcessCameraProvider) {
         val preview = Preview.Builder()
             .build()
-            .also {
-                it.setSurfaceProvider(binding.cameraFeed.surfaceProvider)
+            .apply {
+                setSurfaceProvider(binding.cameraFeed.surfaceProvider)
             }
 
         val imageAnalysis = ImageAnalysis.Builder()
