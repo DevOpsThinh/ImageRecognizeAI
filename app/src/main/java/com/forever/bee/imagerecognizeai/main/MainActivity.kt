@@ -8,7 +8,9 @@
 package com.forever.bee.imagerecognizeai.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -21,10 +23,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    // Just like the regular nav, but letting you navigate to dynamic feature modules just as to regular modules
     private val navController by lazy {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
-        navHostFragment.navController
+        (supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)
+                as DynamicNavHostFragment).navController
     }
 
     private val appBarConfiguration by lazy {
@@ -58,5 +60,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupBottomNav() {
         binding.navView.setupWithNavController(navController)
+        hideBottomNav()
+    }
+
+    private fun hideBottomNav() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                com.forever.bee.imagerecognization.R.id.pictureFragment -> binding.navView.visibility =
+                    View.GONE
+                else -> binding.navView.visibility = View.VISIBLE
+            }
+        }
     }
 }

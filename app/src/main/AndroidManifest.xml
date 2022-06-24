@@ -4,7 +4,7 @@
     package="com.forever.bee.imagerecognizeai">
 
     <application
-        android:name=".IntelligenceApplication"
+        android:name=".IntelligentApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

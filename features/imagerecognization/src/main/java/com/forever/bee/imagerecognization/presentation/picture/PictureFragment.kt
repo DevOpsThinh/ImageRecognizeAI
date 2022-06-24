@@ -8,12 +8,12 @@
 package com.forever.bee.imagerecognization.presentation.picture
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.forever.bee.common.utils.extensions.setImage
+import com.forever.bee.imagerecognization.R
 import com.forever.bee.imagerecognization.databinding.FragmentPictureBinding
 
 /**
@@ -43,6 +43,20 @@ class PictureFragment : Fragment() {
         return binding.root
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_anime, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.anime) {
+            navigateToAnimeStyle()
+            true
+        }
+        else {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
     /**
      * Handle user interactions with the fragment's components (displaying the captured image)
      * */
@@ -50,6 +64,12 @@ class PictureFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.pictureImageView.setImage(args.filePath)
+    }
+
+    private fun navigateToAnimeStyle() {
+        val action = PictureFragmentDirections.actionPictureToAnime(args.filePath)
+
+        findNavController().navigate(action)
     }
 
     /**

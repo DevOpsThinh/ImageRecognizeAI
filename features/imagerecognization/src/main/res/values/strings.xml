@@ -13,4 +13,5 @@
     <string name="picture_label">Picture</string>
     <string name="image_recog">ImageRecognize</string>
     <string name="image_recognize">Image Recognization</string>
+    <string name="anime_style">Anime Style</string>
 </resources>

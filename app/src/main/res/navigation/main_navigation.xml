@@ -6,4 +6,9 @@
 
     <include app:graph="@navigation/image_recognize_navigation" />
     <include app:graph="@navigation/face_detect_navigation" />
+    <include-dynamic
+        android:id="@id/dynamicFeatureImageProcessing"
+        app:graphPackage="com.forever.bee.imageprocessing"
+        app:graphResName="anime_style_navigation"
+        app:moduleName="imageprocessing"/>
 </navigation>

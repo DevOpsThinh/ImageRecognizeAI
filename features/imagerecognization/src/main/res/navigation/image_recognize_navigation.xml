@@ -22,6 +22,14 @@
         <argument
             android:name="filePath"
             app:argType="string" />
+
+        <action
+            android:id="@+id/action_picture_to_anime"
+            app:destination="@+id/dynamicFeatureImageProcessing">
+            <argument
+                android:name="filePath"
+                app:argType="string" />
+        </action>
     </fragment>
 
 </navigation>

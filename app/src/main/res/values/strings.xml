@@ -2,4 +2,5 @@
     <string name="app_name">ImageRecognizeAI</string>
     <string name="permission_required">The app requires camera and storage permissions to run.</string>
     <string name="ok_option">OK</string>
+    <string name="anime">Anime Style</string>
 </resources>
