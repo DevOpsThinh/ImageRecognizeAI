@@ -55,6 +55,12 @@ dependencies {
     implementation "org.tensorflow:tensorflow-lite-gpu:$tensorlite_version"
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.2.0'
 
+    // DI
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
     // Testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

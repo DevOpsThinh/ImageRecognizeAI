@@ -8,6 +8,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
 }
 
@@ -66,6 +68,8 @@ dependencies {
     // Modules
     implementation project(':features:facedetection')
     implementation project(':features:imagerecognization')
+    api project(':classifier_common')
+
     // Support Libraries
     api 'androidx.core:core-ktx:1.7.0'
     api "androidx.appcompat:appcompat:$appcompat_version"
@@ -74,6 +78,15 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    // DI
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    // Needed for DI to work properly
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
 
     // Navigation
     api "androidx.navigation:navigation-fragment-ktx:$nav_version"

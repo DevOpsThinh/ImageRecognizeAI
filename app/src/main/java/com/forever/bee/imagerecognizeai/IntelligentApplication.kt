@@ -10,7 +10,9 @@ package com.forever.bee.imagerecognizeai
 import android.content.Context
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.android.play.core.splitcompat.SplitCompatApplication
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class IntelligentApplication: SplitCompatApplication() {
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
