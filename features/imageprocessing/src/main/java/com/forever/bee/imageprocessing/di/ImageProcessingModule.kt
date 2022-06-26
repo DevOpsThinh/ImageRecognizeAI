@@ -7,11 +7,14 @@
  * */
 package com.forever.bee.imageprocessing.di
 
+import androidx.lifecycle.ViewModelProvider
 import com.forever.bee.common.utils.dependencies.CoroutineDispatchersProvider
 import com.forever.bee.common.utils.dependencies.DispatchersProvider
 import dagger.Binds
 import dagger.Module
+import dagger.Reusable
 import dagger.hilt.migration.DisableInstallInCheck
+import dagger.multibindings.IntoMap
 
 @Module
 @DisableInstallInCheck
@@ -20,4 +23,12 @@ abstract class ImageProcessingModule {
     abstract fun bindDispatchersProvider(
         dispatcherProvider: CoroutineDispatchersProvider
     ): DispatchersProvider
+
+//    @Binds
+//    @IntoMap
+//    @ViewModelKey()
+
+    @Binds
+    @Reusable
+    abstract fun bindViewModelFactory(fac: ViewModelFac): ViewModelProvider.Factory
 }

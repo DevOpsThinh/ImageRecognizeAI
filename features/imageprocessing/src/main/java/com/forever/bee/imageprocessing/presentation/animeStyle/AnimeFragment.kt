@@ -34,7 +34,7 @@ class AnimeFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         DaggerImageProcessingComponent.builder()
-            .context(requireContext())
+            .context(requireActivity())
             .moduleDependencies(
                 EntryPointAccessors.fromApplication(
                     requireActivity().applicationContext,
@@ -53,6 +53,11 @@ class AnimeFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentAnimeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {
