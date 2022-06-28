@@ -7,12 +7,17 @@
  * */
 package com.forever.bee.common.utils.conversions
 
-import android.graphics.Bitmap
-import android.graphics.ImageFormat
-import android.graphics.Matrix
-import android.graphics.Rect
+import android.graphics.*
 import android.renderscript.*
 import androidx.camera.core.ImageProxy
+
+fun toBitmapFromJpeg(proxy: ImageProxy): Bitmap {
+    val jpegBuffer = proxy.planes[0].buffer
+    val jpegSize = jpegBuffer.remaining()
+    val data = ByteArray(jpegSize)
+    jpegBuffer.get(data)
+    return BitmapFactory.decodeByteArray(data, 0, data.size)
+}
 
 /**
  * Converting captured YUV images to bitmaps
@@ -71,7 +76,8 @@ fun ImageProxy.toBitmap(
  * */
 fun ImageProxy.toBitmap(
     rs: RenderScript,
-    script: ScriptIntrinsicYuvToRGB): Bitmap {
+    script: ScriptIntrinsicYuvToRGB
+): Bitmap {
     val yuvBytes = toYuvByteArray()
 
     val yuvType = Type.Builder(rs, Element.U8(rs))
