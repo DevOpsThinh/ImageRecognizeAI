@@ -29,10 +29,12 @@ import com.forever.bee.facedetection.databinding.FragmentFaceDetectionBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import com.forever.bee.facedetection.R
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [FaceDetectionFragment] subclass.
  */
+@AndroidEntryPoint
 class FaceDetectionFragment : Fragment() {
     private var _binding: FragmentFaceDetectionBinding? = null
     private val binding get() = _binding!!

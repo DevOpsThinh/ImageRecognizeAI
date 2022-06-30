@@ -57,7 +57,7 @@ android {
         exclude 'META-INF/LGPL2.1'
     }
 
-    dynamicFeatures = [":features:imageprocessing"]
+    dynamicFeatures = [':features:imageprocessing']
 
 }
 

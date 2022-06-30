@@ -14,6 +14,7 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class IntelligentApplication: SplitCompatApplication() {
+
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
 

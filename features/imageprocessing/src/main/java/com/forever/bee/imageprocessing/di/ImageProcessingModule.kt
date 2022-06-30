@@ -24,10 +24,6 @@ abstract class ImageProcessingModule {
         dispatcherProvider: CoroutineDispatchersProvider
     ): DispatchersProvider
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey()
-
     @Binds
     @Reusable
     abstract fun bindViewModelFactory(fac: ViewModelFac): ViewModelProvider.Factory

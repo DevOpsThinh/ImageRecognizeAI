@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.forever.bee.common.utils.extensions.setImage
 import com.forever.bee.imageprocessing.databinding.FragmentAnimeBinding
 import com.forever.bee.imageprocessing.di.DaggerImageProcessingComponent
 import com.forever.bee.imagerecognizeai.di.ImageProcessingModuleDependencies
@@ -55,28 +56,18 @@ class AnimeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupUI()
+    }
+
+    private fun setupUI() {
+        binding.imageView.setImage(args.filePath)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AnimeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AnimeFragment().apply {
-                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

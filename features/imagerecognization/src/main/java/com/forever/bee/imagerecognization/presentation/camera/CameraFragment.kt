@@ -29,6 +29,7 @@ import com.forever.bee.imagerecognization.ImageAnalyser
 import com.forever.bee.imagerecognization.R
 import com.forever.bee.imagerecognization.databinding.FragmentCameraBinding
 import com.forever.bee.tflite.task.TFLiteModelClassifier
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -41,6 +42,7 @@ import java.util.concurrent.Executors
  * @property imageCapture Store an instance of the [ImageCapture] class, handles actions relating
  * to capturing photos using the CameraX library
  * */
+@AndroidEntryPoint
 class CameraFragment : Fragment() {
 
     private var _binding: FragmentCameraBinding? = null

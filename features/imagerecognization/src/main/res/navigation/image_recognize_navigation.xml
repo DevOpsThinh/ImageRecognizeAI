@@ -9,7 +9,7 @@
         android:id="@+id/imageRecognitionFragment"
         android:name="com.forever.bee.imagerecognization.presentation.camera.CameraFragment"
         android:label="@string/image_recognize"
-        tools:layout="@layout/fragment_camera" >
+        tools:layout="@layout/fragment_camera">
         <action
             android:id="@+id/action_camera_to_picture"
             app:destination="@id/pictureFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/pictureFragment"
         android:name="com.forever.bee.imagerecognization.presentation.picture.PictureFragment"
         android:label="@string/picture_label"
-        tools:layout="@layout/fragment_picture" >
+        tools:layout="@layout/fragment_picture">
         <argument
             android:name="filePath"
             app:argType="string" />

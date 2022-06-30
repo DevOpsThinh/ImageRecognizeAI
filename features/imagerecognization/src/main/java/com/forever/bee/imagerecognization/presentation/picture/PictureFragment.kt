@@ -9,12 +9,15 @@ package com.forever.bee.imagerecognization.presentation.picture
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.forever.bee.common.utils.extensions.setImage
 import com.forever.bee.imagerecognization.R
 import com.forever.bee.imagerecognization.databinding.FragmentPictureBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * Build the [Fragment] with displaying the captured image with a small text label to make it
@@ -24,6 +27,7 @@ import com.forever.bee.imagerecognization.databinding.FragmentPictureBinding
  * @property binding
  * @property args An [PictureFragmentArgs] instance for passing arguments to [PictureFragment]
  * */
+@AndroidEntryPoint
 class PictureFragment : Fragment() {
     private var _binding: FragmentPictureBinding? = null
     private val binding get() = _binding!!
@@ -40,6 +44,7 @@ class PictureFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentPictureBinding.inflate(layoutInflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -63,13 +68,20 @@ class PictureFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        displayLoading()
+
         binding.pictureImageView.setImage(args.filePath)
     }
 
     private fun navigateToAnimeStyle() {
-        val action = PictureFragmentDirections.actionPictureToAnime(args.filePath)
+        val path = requireArguments().getString(args.filePath)
+        val action = PictureFragmentDirections.actionPictureToAnime(path.toString())
 
         findNavController().navigate(action)
+    }
+
+    private fun displayLoading() {
+        binding.progressBar.isVisible = false
     }
 
     /**
