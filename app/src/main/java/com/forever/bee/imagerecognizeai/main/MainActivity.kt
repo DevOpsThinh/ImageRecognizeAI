@@ -11,7 +11,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.dynamicfeatures.fragment.DynamicNavHostFragment
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -38,7 +37,8 @@ class MainActivity : AppCompatActivity() {
         AppBarConfiguration(
             topLevelDestinationIds = setOf(
                 com.forever.bee.imagerecognization.R.id.imageRecognitionFragment,
-                com.forever.bee.facedetection.R.id.faceDetectionFragment
+                com.forever.bee.facedetection.R.id.faceDetectionFragment,
+                com.forever.bee.textrecognition.R.id.text_recognition_fragment
             )
         )
     }

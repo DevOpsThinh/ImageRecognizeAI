@@ -3,5 +3,10 @@
     package="com.forever.bee.facedetection">
 
     <uses-feature android:name="android.hardware.camera.any" />
+    <application>
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="face" />
+    </application>
 
 </manifest>

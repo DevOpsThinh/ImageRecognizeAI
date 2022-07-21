@@ -6,6 +6,7 @@
 
     <include app:graph="@navigation/image_recognize_navigation" />
     <include app:graph="@navigation/face_detect_navigation" />
+    <include app:graph="@navigation/text_recognition_navigation"/>
 
     <include-dynamic
         android:id="@id/dynamicFeatureImageProcessing"

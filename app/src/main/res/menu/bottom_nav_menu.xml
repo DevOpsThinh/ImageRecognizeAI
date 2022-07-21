@@ -13,4 +13,9 @@
         android:icon="@drawable/ic_face"
         android:title="@string/face_detect"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@id/text_recognition_navigation"
+        android:icon="@drawable/ic_image_search"
+        android:title="@string/text_recog"
+        app:showAsAction="ifRoom" />
 </menu>

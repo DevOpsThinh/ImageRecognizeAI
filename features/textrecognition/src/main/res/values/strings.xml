@@ -1,0 +1,4 @@
+<resources>
+    <string name="start_labeling">Start Labeling</string>
+    <string name="text_recog">TextRecognition</string>
+</resources>
