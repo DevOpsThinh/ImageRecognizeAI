@@ -20,9 +20,7 @@ import com.forever.bee.imagerecognizeai.di.ImageProcessingModuleDependencies
 import dagger.hilt.android.EntryPointAccessors
 
 /**
- * A simple [Fragment] subclass.
- * Use the [AnimeFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * A simple AnimeFragment [Fragment] subclass.
  */
 class AnimeFragment : Fragment() {
 
@@ -50,7 +48,7 @@ class AnimeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentAnimeBinding.inflate(inflater, container, false)
         return binding.root

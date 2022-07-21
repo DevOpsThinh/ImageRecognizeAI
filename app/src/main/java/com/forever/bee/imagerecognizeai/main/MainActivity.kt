@@ -18,11 +18,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.forever.bee.imagerecognizeai.R
 import com.forever.bee.imagerecognizeai.databinding.ActivityMainBinding
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var analytics: FirebaseAnalytics
     private lateinit var binding: ActivityMainBinding
 
     // Just like the regular nav, but letting you navigate to dynamic feature modules just as to regular modules
@@ -50,10 +53,17 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBar()
         setupBottomNav()
+
+        initializeAnalytic()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun initializeAnalytic() {
+        // Obtain the FirebaseAnalytics instance.
+        analytics = Firebase.analytics
     }
 
     private fun setupActionBar() {

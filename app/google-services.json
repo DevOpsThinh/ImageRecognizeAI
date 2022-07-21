@@ -1,0 +1,200 @@
+{
+  "project_info": {
+    "project_number": "352578080200",
+    "project_id": "android-programming-dda72",
+    "storage_bucket": "android-programming-dda72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352578080200:android:8fd2deaad37e8ab0ddc4fd",
+        "android_client_info": {
+          "package_name": "com.forever.bee.beepodcast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqdieQG6ir3x7DtbbZE4mZPuMC9ZMvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352578080200:android:0268d7d34891d280ddc4fd",
+        "android_client_info": {
+          "package_name": "com.forever.bee.goworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352578080200-oeruqa5idou2n7u24qlfgc83gv4nr7hi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.forever.bee.goworld",
+            "certificate_hash": "0519f07ea1a65ab2e1be826780a4458b22a76990"
+          }
+        },
+        {
+          "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqdieQG6ir3x7DtbbZE4mZPuMC9ZMvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352578080200:android:6211a9e72a748c9bddc4fd",
+        "android_client_info": {
+          "package_name": "com.forever.bee.imagerecognizeai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqdieQG6ir3x7DtbbZE4mZPuMC9ZMvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352578080200:android:fab139c70c0ef54dddc4fd",
+        "android_client_info": {
+          "package_name": "com.forever.bee.lets_eat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352578080200-ed9mlr0r4201v5jr541uk6m7esh012fp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.forever.bee.lets_eat",
+            "certificate_hash": "0519f07ea1a65ab2e1be826780a4458b22a76990"
+          }
+        },
+        {
+          "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqdieQG6ir3x7DtbbZE4mZPuMC9ZMvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352578080200:android:61461b5fc41943beddc4fd",
+        "android_client_info": {
+          "package_name": "com.forever.bee.listtasksmaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqdieQG6ir3x7DtbbZE4mZPuMC9ZMvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352578080200:android:a735f45b7a8fca87ddc4fd",
+        "android_client_info": {
+          "package_name": "com.forever.bee.timefighter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqdieQG6ir3x7DtbbZE4mZPuMC9ZMvP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352578080200-qbq1ns6h36lo77r241611ubihfjdgm4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

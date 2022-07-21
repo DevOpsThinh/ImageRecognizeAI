@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/features/facedetection" />
             <option value="$PROJECT_DIR$/features/imageprocessing" />
             <option value="$PROJECT_DIR$/features/imagerecognization" />
+            <option value="$PROJECT_DIR$/features/textrecognition" />
             <option value="$PROJECT_DIR$/tensorflow_lite_interpreter" />
             <option value="$PROJECT_DIR$/tensorflow_lite_task" />
           </set>

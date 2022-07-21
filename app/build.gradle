@@ -11,6 +11,8 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -34,6 +36,9 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            firebaseCrashlytics {
+                mappingFileUploadEnabled false
+            }
         }
     }
 
@@ -66,15 +71,24 @@ dependencies {
     // Kotlin
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     // Modules
+    api project(':classifier_common')
     implementation project(':features:facedetection')
     implementation project(':features:imagerecognization')
-    api project(':classifier_common')
+    implementation project(':features:textrecognition')
 
     // Support Libraries
     api 'androidx.core:core-ktx:1.7.0'
     api "androidx.appcompat:appcompat:$appcompat_version"
     api "com.google.android.material:material:$material_version"
     api "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    // Firebase services
+    implementation platform('com.google.firebase:firebase-bom:29.2.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Testing
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"

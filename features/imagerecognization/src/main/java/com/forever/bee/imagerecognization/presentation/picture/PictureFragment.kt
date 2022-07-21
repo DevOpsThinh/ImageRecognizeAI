@@ -11,7 +11,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.forever.bee.common.utils.extensions.setImage
