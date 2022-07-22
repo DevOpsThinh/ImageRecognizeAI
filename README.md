@@ -19,7 +19,7 @@ from a computer screen.<br>
 <br>This configuration was chosen on purpose to protect the person’s privacy.)
 This module aims to demonstrate how to work with the Google ML Kit for face detection and 
 <br>verify that the face detected in the source image can be extracted.
-- #### Module #4: Text Recognition (with Google ML Kit - Java version) 
+#### Module #4: Text Recognition (with Google ML Kit - Java version) 
 This module aims to demonstrate how to work with the Google ML Kit for text recognition and 
 <br>verify that the text recognized in the source image can be extracted.
 ___
