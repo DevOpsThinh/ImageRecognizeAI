@@ -16,7 +16,7 @@ from a computer screen.<br>
   <img src="img/img_processing_dynamic_feature.gif" height="480"/> <br>
 #### Module #3: Face Detection (with Google ML Kit)
 (Note that the face is blurry because it is pretty small in the original image.
-<br>This configuration was chosen on purpose to protect the person’s privacy.)
+<br>This configuration was chosen on purpose to protect the person’s privacy.)<br>
 This module aims to demonstrate how to work with the Google ML Kit for face detection and 
 <br>verify that the face detected in the source image can be extracted.
 #### Module #4: Text Recognition (with Google ML Kit - Java version) 
